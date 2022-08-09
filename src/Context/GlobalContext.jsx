@@ -15,12 +15,15 @@ export const GlobalProvider = ({ children }) => {
 	mediaQueryMd.addListener(breakpoint);
 	mediaQueryLg.addListener(breakpoint);
 	const [isLoading, setIsLoading] = useState(false);
+	const [openNav, setOpenNav] = useState(false);
 	return (
 		<GlobalContext.Provider
 			value={{
 				isLoading,
 				setIsLoading,
 				breakpoint,
+				openNav,
+				setOpenNav,
 			}}
 		>
 			{children}
