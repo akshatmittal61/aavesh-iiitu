@@ -1,33 +1,40 @@
-import { GitHub, Instagram, Linkedin, Mail } from "react-feather";
+import { Facebook, GitHub, Instagram, Linkedin, Mail } from "react-feather";
 
 const socials = [
 	{
-		link: "https://www.instagram.com/force.iiitu/",
+		link: "https://www.instagram.com/teamaavesh/",
 		icon: <Instagram />,
 		text: "Instagram",
-		username: "force.iiitu",
-		linkText: "instagram.com/force.iiitu",
+		username: "teamaavesh",
+		linkText: "instagram.com/teamaavesh",
 	},
 	{
-		link: "https://www.linkedin.com/company/force-iiitu/",
+		link: "https://www.facebook.com/TeamAAVESH/",
+		icon: <Facebook />,
+		text: "Facebook",
+		username: "TeamAAVESH",
+		linkText: "instagram.com/TeamAAVESH",
+	},
+	{
+		link: "https://www.linkedin.com/company/aavesh-iiitu/",
 		icon: <Linkedin />,
 		text: "LinkedIn",
-		username: "force-iiitu",
-		linkText: "linkedin.com/company/force-iiitu",
+		username: "aavesh-iiitu",
+		linkText: "linkedin.com/company/aavesh-iiitu",
 	},
 	{
-		link: "https://github.com/iiitu-force",
+		link: "https://github.com/aavesh-iiitu",
 		icon: <GitHub />,
 		text: "GitHub",
-		username: "iiitu-force",
-		linkText: "github.com/iiitu-force",
+		username: "aavesh-iiitu",
+		linkText: "github.com/aavesh-iiitu",
 	},
 	{
-		link: "mailto:clubforce@iiitu.ac.in",
+		link: "mailto:aavesh@iiitu.ac.in",
 		icon: <Mail />,
 		text: "Email",
-		username: "clubforce@iiitu.ac.in",
-		linkText: "clubforce@iiitu.ac.in",
+		username: "aavesh@iiitu.ac.in",
+		linkText: "aavesh@iiitu.ac.in",
 	},
 ];
 
