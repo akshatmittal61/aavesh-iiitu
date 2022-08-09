@@ -34,8 +34,8 @@ npm start
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the website
 
-## Author
+# Author
 
 [Akshat Mittal](https://github.com/akshatmittal61)
 
-## Contributors
+# Contributors
