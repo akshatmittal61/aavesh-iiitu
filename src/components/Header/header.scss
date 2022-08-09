@@ -1,0 +1,22 @@
+.header {
+	width: 100%;
+	height: var(--head-height);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
+	overflow: hidden;
+	background-color: var(--black);
+	&-left {
+		width: 10rem;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img {
+			object-fit: cover;
+			max-width: 100%;
+			max-height: 90%;
+		}
+	}
+}
