@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import GlobalContext from "./Context/GlobalContext";
 import Contact from "./pages/Contact/Contact";
 import Team from "./pages/Team/Team";
+import NotFound from "./pages/NotFound/NotFound";
 
 const App = () => {
 	const { setOpenNav, breakpoint } = useContext(GlobalContext);
@@ -26,6 +27,7 @@ const App = () => {
 				<Route path="/" element={<Home />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/team" element={<Team />} />
+				<Route path="*" element={<NotFound />} />
 			</Routes>
 			<Footer />
 		</>

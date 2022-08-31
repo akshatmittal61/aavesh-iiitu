@@ -18,7 +18,9 @@ const Footer = () => {
 					{navLinks.map(
 						(navLink, id) =>
 							id < k && (
-								<Link to={navLink.link}>{navLink.text}</Link>
+								<Link key={id} to={navLink.link}>
+									{navLink.text}
+								</Link>
 							)
 					)}
 				</div>
@@ -41,7 +43,9 @@ const Footer = () => {
 					{navLinks.map(
 						(navLink, id) =>
 							id >= k && (
-								<Link to={navLink.link}>{navLink.text}</Link>
+								<Link key={id} to={navLink.link}>
+									{navLink.text}
+								</Link>
 							)
 					)}
 				</div>
