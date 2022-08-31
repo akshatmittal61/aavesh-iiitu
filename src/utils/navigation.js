@@ -24,6 +24,11 @@ const navLinks = [
 		icon: "image",
 		text: "Gallery",
 	},
+	{
+		link: "/contact",
+		icon: "call",
+		text: "Contact Us",
+	},
 ];
 
 export default navLinks;

@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 import GlobalContext from "./Context/GlobalContext";
+import Contact from "./pages/Contact/Contact";
 
 const App = () => {
 	const { setOpenNav, breakpoint } = useContext(GlobalContext);
@@ -22,6 +23,7 @@ const App = () => {
 			{(breakpoint("mobile") || breakpoint("tab")) && <Navigation />}
 			<Routes>
 				<Route path="/" element={<Home />} />
+				<Route path="/contact" element={<Contact />} />
 			</Routes>
 			<Footer />
 		</>
