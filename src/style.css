@@ -479,7 +479,7 @@ img {
 }
 ::-webkit-scrollbar-thumb {
   background-clip: content-box;
-  background-color: var(--primary-1);
+  background-color: var(--secondary-2);
   border-radius: 500px;
 }
 ::-webkit-scrollbar-thumb:hover {

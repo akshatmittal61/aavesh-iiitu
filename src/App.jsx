@@ -10,7 +10,7 @@ import Footer from "./components/Footer/Footer";
 import GlobalContext from "./Context/GlobalContext";
 
 const App = () => {
-	const { setOpenNav } = useContext(GlobalContext);
+	const { setOpenNav, breakpoint } = useContext(GlobalContext);
 	AOS.init();
 	const location = useLocation();
 	useEffect(() => {
@@ -19,7 +19,7 @@ const App = () => {
 	return (
 		<>
 			<Header />
-			<Navigation />
+			{(breakpoint("mobile") || breakpoint("tab")) && <Navigation />}
 			<Routes>
 				<Route path="/" element={<Home />} />
 			</Routes>
