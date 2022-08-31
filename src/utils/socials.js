@@ -13,7 +13,7 @@ const socials = [
 		icon: <Facebook />,
 		text: "Facebook",
 		username: "TeamAAVESH",
-		linkText: "instagram.com/TeamAAVESH",
+		linkText: "facebook.com/TeamAAVESH",
 	},
 	{
 		link: "https://www.linkedin.com/company/aavesh-iiitu/",
