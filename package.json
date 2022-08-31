@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "sass src/style.scss:src/style.css src/components/Header/header.scss:src/components/Header/header.css src/components/Footer/footer.scss:src/components/Footer/footer.css src/components/Navigation/navigation.scss:src/components/Navigation/navigation.css src/pages/Home/home.scss:src/pages/Home/home.css src/pages/Contact/contact.scss:src/pages/Contact/contact.css -w"
+    "sass": "sass src/style.scss:src/style.css src/components/Header/header.scss:src/components/Header/header.css src/components/Footer/footer.scss:src/components/Footer/footer.css src/components/Card/card.scss:src/components/Card/card.css src/components/Navigation/navigation.scss:src/components/Navigation/navigation.css src/pages/Home/home.scss:src/pages/Home/home.css src/pages/Contact/contact.scss:src/pages/Contact/contact.css src/pages/Team/team.scss:src/pages/Team/team.css -w"
   },
   "eslintConfig": {
     "extends": [
