@@ -2,6 +2,7 @@ import React from "react";
 import favicon from "../../images/favicon.png";
 import bg from "../../images/bg.jpg";
 import "./home.css";
+import MaterialIcons from "../../components/MaterialIcons";
 
 const Home = () => {
 	return (
@@ -25,6 +26,14 @@ const Home = () => {
 						</span>
 					</div>
 				</div>
+				<button
+					className="home-hero-scroll-btn"
+					onClick={() => {
+						window.scrollTo(0, window.innerHeight);
+					}}
+				>
+					<MaterialIcons>expand_more</MaterialIcons>
+				</button>
 			</section>
 		</main>
 	);

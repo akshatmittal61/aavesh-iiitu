@@ -14,6 +14,7 @@
   background-size: cover;
   background-position: center;
   background-color: rgba(0, 0, 0, 0.9);
+  position: relative;
 }
 .home-hero-left {
   width: 50%;
@@ -50,6 +51,34 @@
   letter-spacing: 0.1rem;
   margin: 1rem 0;
   font-family: Helvetica, sans-serif;
+}
+.home-hero-scroll-btn {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2rem;
+  height: 2rem;
+  color: var(--white);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-0.25rem);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(0.25rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=home.css.map */
