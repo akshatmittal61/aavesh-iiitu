@@ -1,3 +1,5 @@
+@import "../../config";
+
 .contact {
 	width: 100%;
 	height: calc(100vh - var(--head-height));
@@ -7,6 +9,7 @@
 	justify-content: space-evenly;
 	align-items: center;
 	flex-flow: column;
+
 	&-head {
 		width: 100%;
 		font-size: 2.5rem;
@@ -16,6 +19,7 @@
 		justify-content: center;
 		align-items: center;
 	}
+
 	&-body {
 		width: 100%;
 		height: 80%;
@@ -23,19 +27,31 @@
 		justify-content: space-evenly;
 		align-items: center;
 	}
+
 	&-left {
 		width: 45%;
 		height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		@include respond(tab) {
+			display: none;
+		}
 	}
+
 	&-right {
 		width: 45%;
 		height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		@include respond(tab) {
+			width: 100%;
+			height: 90%;
+		}
+
 		form {
 			width: 90%;
 			height: 90%;
@@ -45,6 +61,7 @@
 			justify-content: space-evenly;
 			align-items: center;
 			flex-flow: column;
+
 			input,
 			textarea {
 				width: 80%;
@@ -52,14 +69,17 @@
 				padding: 0.5rem;
 				color: var(--white);
 				border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
 				&::placeholder {
 					color: var(--bgcolor);
 				}
+
 				&:active,
 				&:focus {
 					border-color: var(--white);
 				}
 			}
+
 			button:first-child {
 				color: var(--white);
 			}
