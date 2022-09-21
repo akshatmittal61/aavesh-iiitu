@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import favicon from "../../images/favicon.png";
-import bg from "../../images/bg.jpg";
+import homeBg from "../../images/bg.jpg";
+import teamBg from "../../images/team-bg.webp";
 import "./home.css";
 import MaterialIcons from "../../components/MaterialIcons";
+import Button from "../../components/Button/Button";
+import { ArrowRight } from "react-feather";
+import Row, { Col } from "../../Layout/Responsive";
+import { office } from "../../utils/team";
+import Card from "../../components/Card/Card";
+import GlobalContext from "../../Context/GlobalContext";
 
 const Home = () => {
+	const { breakpoint } = useContext(GlobalContext);
 	return (
 		<main className="home">
 			<section
 				className="home-hero"
 				style={{
-					backgroundImage: `url(${bg})`,
+					backgroundImage: `url(${homeBg})`,
 				}}
 			>
 				<div className="home-hero-left">
@@ -57,6 +65,44 @@ const Home = () => {
 						published in the Current event section in every
 						semester.
 					</p>
+				</div>
+			</section>
+			<section
+				className="home-team"
+				style={{
+					backgroundImage: `url(${teamBg})`,
+				}}
+			>
+				<div className="home-team-head">
+					<h1>Our Team</h1>
+					<Button
+						text={
+							<>
+								View All <ArrowRight />
+							</>
+						}
+						color="white"
+						link="/team"
+					/>
+				</div>
+				<div className="home-team-body">
+					<Row>
+						{office.map((person, id) => (
+							<Col
+								lg={33}
+								md={
+									id === office.length - 1 &&
+									(breakpoint("tab") || breakpoint("mobile"))
+										? 100
+										: 50
+								}
+								sm={100}
+								key={id}
+							>
+								<Card {...person} />
+							</Col>
+						))}
+					</Row>
 				</div>
 			</section>
 		</main>

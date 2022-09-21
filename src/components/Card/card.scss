@@ -1,3 +1,5 @@
+@import "../../config";
+
 .card {
 	width: 20rem;
 	height: auto;
@@ -13,10 +15,16 @@
 	position: relative;
 	overflow: hidden;
 	z-index: 2;
+
+	@include respond(phone) {
+		width: 25rem;
+	}
+
 	&-bubble {
 		content: "";
 		position: absolute;
 		border-radius: 500px;
+
 		&-1 {
 			top: 0;
 			right: 0;
@@ -26,6 +34,7 @@
 			z-index: 3;
 			background-color: var(--light-blue-700);
 		}
+
 		&-2 {
 			top: 8.5rem;
 			right: 0;
@@ -36,36 +45,43 @@
 			background-color: var(--light-blue);
 		}
 	}
+
 	&-image {
 		width: 8.5rem;
 		height: 8.5rem;
 		margin: 2rem 0;
+
 		img {
 			width: 100%;
 			height: 100%;
 			border-radius: 500px;
 		}
 	}
+
 	&-content {
 		width: 100%;
 		overflow: hidden;
 	}
+
 	&-name {
 		width: 100%;
 		font-size: 2rem;
 		line-height: 2.5rem;
 		font-family: var(--font-bold);
 	}
+
 	&-title {
 		font-size: 1.2rem;
 		line-height: 1.75rem;
 	}
+
 	&-status {
 		width: 95%;
 		margin: 0.5rem 0;
 		font-size: 0.9125rem;
 		line-height: 1.25rem;
 	}
+
 	&-socials {
 		width: 100%;
 		display: flex;
@@ -73,6 +89,7 @@
 		align-items: center;
 		flex-wrap: wrap;
 		margin: 1rem 0 0.5rem 0;
+
 		a {
 			--size: 48px;
 			margin: 0 0.5rem 0 0;
@@ -90,6 +107,7 @@
 			border-radius: 50%;
 			transition: none;
 			cursor: pointer;
+
 			/* @include respond(tab) {
 				margin: 0.75rem 1.25rem;
 			}
@@ -101,6 +119,7 @@
 				z-index: 5;
 				transition: color 0.05s ease-in-out;
 			}
+
 			&::before {
 				content: "";
 				position: absolute;
@@ -111,41 +130,53 @@
 				transition: 0.5s;
 				z-index: 1;
 			}
+
 			&:hover {
 				svg {
 					color: #ffffff;
 				}
+
 				&::before {
 					transform: scale(1);
 				}
 			}
 		}
+
 		.linkedin {
 			color: var(--blue);
+
 			&::before {
 				background-color: var(--blue);
 			}
 		}
+
 		.instagram {
 			color: var(--pink);
+
 			&::before {
 				background-color: var(--pink);
 			}
 		}
+
 		.phone {
 			color: var(--indigo);
+
 			&::before {
 				background-color: var(--indigo);
 			}
 		}
+
 		.mail {
 			color: var(--red);
+
 			&::before {
 				background-color: var(--red);
 			}
 		}
+
 		.twitter {
 			color: var(--light-blue);
+
 			&::before {
 				background-color: var(--light-blue);
 			}

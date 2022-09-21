@@ -14,6 +14,11 @@
   overflow: hidden;
   z-index: 2;
 }
+@media (max-width: 672px) {
+  .card {
+    width: 25rem;
+  }
+}
 .card-bubble {
   content: "";
   position: absolute;
