@@ -1,22 +1,22 @@
 .wall {
   width: 100%;
 }
-.wall-achievements {
-  width: 100%;
-}
-.wall-achievements-head {
+.wall-achievements-head, .wall-projects-head {
   width: 100%;
   margin: 3rem auto;
   text-align: center;
 }
-.wall-achievements-head h1 {
+.wall-achievements-head h1, .wall-projects-head h1 {
   font-size: 4rem;
   line-height: 5rem;
   color: var(--indigo);
 }
-.wall-achievements-body {
+.wall-achievements-body, .wall-projects-body {
   width: 100%;
   padding: 0 2rem;
+}
+.wall-achievements {
+  width: 100%;
 }
 .wall-achievements-body table {
   border-spacing: 1;

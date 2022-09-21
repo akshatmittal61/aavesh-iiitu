@@ -1,10 +1,27 @@
 import React from "react";
+import Project from "../../components/Project/Project";
+import Row, { Col } from "../../Layout/Responsive";
 import achievements from "../../utils/achievements";
+import projects from "../../utils/projects";
 import "./wall.css";
 
 const Wall = () => {
 	return (
 		<main className="wall">
+			<section className="wall-projects">
+				<div className="wall-projects-head">
+					<h1>Projects</h1>
+				</div>
+				<div className="wall-projects-body">
+					<Row>
+						{projects.map((project, id) => (
+							<Col lg={33} md={50} sm={100} key={id}>
+								<Project {...project} />
+							</Col>
+						))}
+					</Row>
+				</div>
+			</section>
 			<section className="wall-achievements">
 				<div className="wall-achievements-head">
 					<h1>Achievements</h1>

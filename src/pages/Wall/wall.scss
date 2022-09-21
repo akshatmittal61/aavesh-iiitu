@@ -1,9 +1,8 @@
 .wall {
     width: 100%;
 
-    &-achievements {
-        width: 100%;
-
+    &-achievements,
+    &-projects {
         &-head {
             width: 100%;
             margin: 3rem auto;
@@ -19,8 +18,13 @@
         &-body {
             width: 100%;
             padding: 0 2rem;
+        }
+    }
 
+    &-achievements {
+        width: 100%;
 
+        &-body {
             table {
                 border-spacing: 1;
                 border-collapse: collapse;
