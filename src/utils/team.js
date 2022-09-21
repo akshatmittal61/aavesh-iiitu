@@ -68,9 +68,9 @@ team.forEach((member) => {
 	else if (member.email.slice(0, 2) === "21")
 		volunteers = [...volunteers, member];
 	if (
-		member.email === "19331@iiitu.ac.in" ||
-		member.email === "19137@iiitu.ac.in" ||
-		member.email === "19307@iiitu.ac.in"
+		member.email === "19149@iiitu.ac.in" ||
+		member.email === "19241@iiitu.ac.in" ||
+		member.email === "19155@iiitu.ac.in"
 	)
 		office = [...office, member];
 });
