@@ -12,6 +12,7 @@ import Contact from "./pages/Contact/Contact";
 import Team from "./pages/Team/Team";
 import NotFound from "./pages/NotFound/NotFound";
 import Gallery from "./pages/Gallery/Gallery";
+import Wall from "./pages/Wall/Wall";
 
 const App = () => {
 	const { setOpenNav, breakpoint } = useContext(GlobalContext);
@@ -32,6 +33,7 @@ const App = () => {
 				<Route path="/" element={<Home />} />
 				<Route path="/gallery" element={<Gallery />} />
 				<Route path="/team" element={<Team />} />
+				<Route path="/wall-of-fame" element={<Wall />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>

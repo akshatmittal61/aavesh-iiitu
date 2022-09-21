@@ -1,0 +1,69 @@
+.wall {
+  width: 100%;
+}
+.wall-achievements {
+  width: 100%;
+}
+.wall-achievements-head {
+  width: 100%;
+  margin: 1rem auto;
+  text-align: center;
+}
+.wall-achievements-head h1 {
+  font-size: 4rem;
+  line-height: 5rem;
+  color: var(--indigo);
+}
+.wall-achievements-body {
+  width: 100%;
+  padding: 0 2rem;
+}
+.wall-achievements-body table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.wall-achievements-body table * {
+  position: relative;
+}
+.wall-achievements-body table thead th {
+  height: 60px;
+  background: #36304a;
+  color: #ffffff;
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+  padding-left: 8px;
+  text-align: left;
+}
+.wall-achievements-body table tbody tr {
+  height: 50px;
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+}
+.wall-achievements-body table tbody tr td {
+  padding: 0 0.5rem;
+}
+.wall-achievements-body table tbody tr:last-child {
+  border: 0;
+}
+.wall-achievements-body table tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+.wall-achievements-body table tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=wall.css.map */
