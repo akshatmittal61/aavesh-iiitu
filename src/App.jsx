@@ -11,6 +11,7 @@ import GlobalContext from "./Context/GlobalContext";
 import Contact from "./pages/Contact/Contact";
 import Team from "./pages/Team/Team";
 import NotFound from "./pages/NotFound/NotFound";
+import Gallery from "./pages/Gallery/Gallery";
 
 const App = () => {
 	const { setOpenNav, breakpoint } = useContext(GlobalContext);
@@ -29,8 +30,9 @@ const App = () => {
 			{(breakpoint("mobile") || breakpoint("tab")) && <Navigation />}
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/contact" element={<Contact />} />
+				<Route path="/gallery" element={<Gallery />} />
 				<Route path="/team" element={<Team />} />
+				<Route path="/contact" element={<Contact />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 			<Footer />
