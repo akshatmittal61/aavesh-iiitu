@@ -26,6 +26,30 @@
         width: 100%;
 
         &-body {
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+                height: 0px;
+                background-color: transparent;
+
+                &-track {
+                    background-color: transparent;
+                }
+
+                &-thumb {
+                    background-color: transparent;
+                    border-radius: 500px;
+
+                    &:hover {
+                        background-color: transparent;
+                    }
+
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+            }
+
             table {
                 border-spacing: 1;
                 border-collapse: collapse;
@@ -35,6 +59,7 @@
                 width: 100%;
                 margin: 0 auto;
                 position: relative;
+                overflow-x: auto;
 
                 * {
                     position: relative;
@@ -51,6 +76,10 @@
                     font-weight: unset;
                     padding-left: 8px;
                     text-align: left;
+                }
+
+                tbody {
+                    overflow-x: auto;
                 }
 
                 tbody tr {

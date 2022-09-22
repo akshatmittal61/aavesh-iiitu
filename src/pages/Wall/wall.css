@@ -18,6 +18,26 @@
 .wall-achievements {
   width: 100%;
 }
+.wall-achievements-body {
+  overflow-x: auto;
+}
+.wall-achievements-body::-webkit-scrollbar {
+  height: 0px;
+  background-color: transparent;
+}
+.wall-achievements-body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.wall-achievements-body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 500px;
+}
+.wall-achievements-body::-webkit-scrollbar-thumb:hover {
+  background-color: transparent;
+}
+.wall-achievements-body::-webkit-scrollbar-thumb:hover {
+  background-color: transparent;
+}
 .wall-achievements-body table {
   border-spacing: 1;
   border-collapse: collapse;
@@ -27,6 +47,7 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
+  overflow-x: auto;
 }
 .wall-achievements-body table * {
   position: relative;
@@ -42,6 +63,9 @@
   font-weight: unset;
   padding-left: 8px;
   text-align: left;
+}
+.wall-achievements-body table tbody {
+  overflow-x: auto;
 }
 .wall-achievements-body table tbody tr {
   height: 50px;
