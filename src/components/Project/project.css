@@ -13,6 +13,9 @@
   overflow: hidden;
   margin: 1rem;
 }
+.project:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
 .project-title {
   width: 90%;
   font-size: 2rem;
