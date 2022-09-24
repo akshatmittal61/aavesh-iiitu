@@ -11,7 +11,7 @@ Aavesh is the core electronics society of IIITU that strives to teach and help s
 ### Clone the repository in you local machine
 
 ```sh
-git clone https://github.com/Aavesh-IIITU/aavesh-iiitu.git
+git clone https://github.com/akshatmittal61/aavesh-iiitu.git
 ```
 
 ### Enter the 'aavesh-iiitu' directory
@@ -36,6 +36,4 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 # Author
 
-[Akshat Mittal](https://github.com/akshatmittal61)
-
-# Contributors
+[Akshat Mittal](https://akshatmittal61.vercel.app/)
