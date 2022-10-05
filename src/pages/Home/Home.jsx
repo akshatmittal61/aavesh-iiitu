@@ -13,6 +13,29 @@ import GlobalContext from "../../Context/GlobalContext";
 
 const Home = () => {
 	const { breakpoint } = useContext(GlobalContext);
+
+	const faqs = [
+		{
+			question: "What is AAVESH? ",
+			answer: "AAVESH is an organization, the electronic society of IIIT Una which deals with the electronic Innovation and various technologies. ",
+		},
+		{
+			question: "How to join AAVESH? ",
+			answer: "Every year, freshman interviews are conducted with all the required manner. ",
+		},
+		{
+			question: "What are the skills required to join AAVESH? ",
+			answer: "You have to be a team member and passionate about your work and enthusiastic towards the position. ",
+		},
+		{
+			question: "What could be the benefits in being in AAVESH? ",
+			answer: "You will learn to deal with various types of work and time management and also get a chance to work on various events. Also you can get various merchandise inside the club. ",
+		},
+		{
+			question: "How does AAVESH enhance your career? ",
+			answer: "It. brings a mindset to work as a team and teaches you the time management and team management. It gives you various project works which will be useful for the resume too.",
+		},
+	];
 	return (
 		<main className="home">
 			<section
@@ -103,6 +126,53 @@ const Home = () => {
 							</Col>
 						))}
 					</Row>
+				</div>
+			</section>
+			<section className="home-about">
+				<div className="home-about-head">
+					<h1>Why should you join us?</h1>
+				</div>
+				<div className="home-about-body">
+					<p>
+						Experience, Explore, Enhance and Innovate. AAVESH is a
+						society where you learn better, enhance skills, explore
+						ideas and work with an experienced team with a great
+						understanding and vision. You should be the part of this
+						amazing team and work to grow your skills in a positive
+						way. We as a team make various projects and real life
+						helping ideas and innovation. You will definitely get
+						your best version here. Join now!
+					</p>
+				</div>
+			</section>
+			<section className="home-about">
+				<div className="home-about-head">
+					<h1
+						style={{
+							color: "var(--bgcolor)",
+						}}
+					>
+						FAQs
+					</h1>
+				</div>
+				<div className="home-about-body">
+					<p
+						style={{
+							fontSize: "1.25rem",
+						}}
+					>
+						<div class="tabs">
+							{faqs.map((faq, id) => (
+								<div class="tab" key={id}>
+									<input type="checkbox" id={`chck${id}`} />
+									<label class="tab-label" for={`chck${id}`}>
+										{faq.question}
+									</label>
+									<div class="tab-content">{faq.answer}</div>
+								</div>
+							))}
+						</div>
+					</p>
 				</div>
 			</section>
 		</main>
