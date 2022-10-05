@@ -134,6 +134,7 @@
   line-height: 2rem;
   text-align: justify;
   width: 97.5%;
+  margin: 1rem 0;
 }
 .home-about input {
   position: absolute;

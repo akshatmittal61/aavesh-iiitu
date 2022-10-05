@@ -1,7 +1,4 @@
 import React, { useContext } from "react";
-import favicon from "../../images/favicon.png";
-import homeBg from "../../images/bg.jpg";
-import teamBg from "../../images/team-bg.webp";
 import "./home.css";
 import MaterialIcons from "../../components/MaterialIcons";
 import Button from "../../components/Button/Button";
@@ -10,6 +7,10 @@ import Row, { Col } from "../../Layout/Responsive";
 import { office } from "../../utils/team";
 import Card from "../../components/Card/Card";
 import GlobalContext from "../../Context/GlobalContext";
+import favicon from "../../images/favicon.png";
+import homeBg from "../../images/bg.jpg";
+import teamBg from "../../images/team-bg.webp";
+import qmarks from "../../images/quesmarks.png";
 
 const Home = () => {
 	const { breakpoint } = useContext(GlobalContext);
@@ -143,9 +144,22 @@ const Home = () => {
 						helping ideas and innovation. You will definitely get
 						your best version here. Join now!
 					</p>
+					<p>
+						We organize various expert lectures, workshops,
+						mentorship programs as well as competitions throughout
+						the year with the aim of keeping the students learning
+						and providing them the necessary resources to implement
+						their ideas.
+					</p>
 				</div>
 			</section>
-			<section className="home-about">
+			<section
+				className="home-about"
+				style={{
+					backgroundImage: `url(${qmarks})`,
+					backgroundColor: "rgba(0,0,0,0.75)",
+				}}
+			>
 				<div className="home-about-head">
 					<h1
 						style={{
