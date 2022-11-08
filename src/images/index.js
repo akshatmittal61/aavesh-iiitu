@@ -1,3 +1,5 @@
 import hexagons from "./hexagon.jpg";
+import moon from "./moon.png";
+import stars from "./stars.png";
 
-export { hexagons };
+export { hexagons, moon, stars };

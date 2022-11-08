@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Project from "../../components/Project/Project";
-import { hexagons } from "../../images";
+import { hexagons, moon, stars } from "../../images";
 import projects from "../../utils/projects";
+import socials from "../../utils/socials";
 import { pillar } from "../../vectors";
 import "./home.scss";
 
@@ -26,7 +27,32 @@ const Home = () => {
 
 	return (
 		<main className="home">
-			<section className="home-hero"></section>
+			<section className="home-hero" style={{
+				backgroundImage: `url(${stars})`,
+			}}>
+				<div className="home-hero-content">
+					<h1>Learn Electronics and Create</h1>
+				</div>
+				<div className="home-hero-socials">
+					{socials.map((social, index) => (
+						<a
+							href={social.link}
+							target="_blank"
+							rel="noreferrer"
+							key={index}
+						>
+							{social.icon}
+						</a>
+					))}
+				</div>
+				<div className="home-hero-scroll">
+					<span className="home-hero-scroll__text">Scroll</span>
+					<span className="home-hero-scroll__arrow"></span>
+				</div>
+				<div className="home-hero-moon">
+					<img src={moon} alt="Moon" />
+				</div>
+			</section>
 			<section className="home-about">
 				<div className="home-about-head">
 					<h1>About Us</h1>

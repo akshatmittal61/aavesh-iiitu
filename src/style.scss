@@ -161,8 +161,6 @@
 
 html {
 	font-size: 16px;
-	scroll-snap-type: mandatory;
-	scroll-snap-points-y: repeat(100vh);
 	scroll-snap-type: y mandatory;
 
 	@include respond(tab) {
@@ -186,6 +184,7 @@ body{
 	transition: all var(--transition-time) ease-in-out;
 	overflow-x: hidden;
 	position: relative;
+	width: 100vw;
 }
 
 svg {

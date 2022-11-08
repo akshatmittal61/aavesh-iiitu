@@ -1,5 +1,5 @@
 .home {
-	width: 100%;
+	width: 100vw;
 
 	&-arrows {
 		width: 100vw;
@@ -56,12 +56,119 @@
 	}
 
 	section {
-		width: 100%;
+		width: 100vw;
 		height: 100vh;
 		position: relative;
 		z-index: 2;
-		background: transparent;
+		background-color: transparent;
 		scroll-snap-align: start;
+	}
+
+	&-hero {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		color: var(--white);
+
+		&-content {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			white-space: nowrap;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 4rem;
+			line-height: 6rem;
+			font-weight: 600;
+		}
+
+		&-socials {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			flex-flow: column;
+			padding: 0 2rem;
+			padding-bottom: 5rem;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+
+			a {
+				margin: 0.75rem auto;
+				width: 2rem;
+				height: 2rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				svg {
+					width: 1.5rem;
+					height: 1.5rem;
+				}
+			}
+		}
+
+		&-scroll {
+			position: absolute;
+			writing-mode: vertical-lr;
+			right: 0;
+			bottom: 7.5rem;
+			padding: 0 2rem;
+
+			&__arrow {
+				position: absolute;
+				top: calc(100% + 1rem);
+				left: 50%;
+				transform: translateX(-50%);
+				width: 1px;
+				height: 4rem;
+				background-color: var(--white);
+
+				&::before,
+				&::after {
+					content: '';
+					width: 1px;
+					height: 0.5rem;
+					background-color: var(--white);
+					position: absolute;
+					top: 100%;
+				}
+
+				&::before {
+					transform: translate(0.2rem, -90%) rotate(45deg);
+				}
+
+				&::after {
+					transform: translate(-0.2rem, -90%) rotate(-45deg);
+				}
+
+				// &::after{
+				// 	transform: translateX(-50%) rotate(-45deg);
+				// }
+			}
+		}
+
+		&-moon {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 80%;
+			transform: translateX(-50%);
+			height: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
 
 	&-about,
