@@ -1,295 +1,93 @@
-@import "../../config";
-$midnight: #2c3e50;
-$clouds: #ecf0f1;
-
 .home {
 	width: 100%;
-	min-height: 100vh;
 
-	&>section {
-		position: relative;
-
-		&:nth-child(odd) {
-			background-blend-mode: darken;
-			background-size: cover;
-			background-position: center;
-			background-attachment: fixed;
-			background-color: rgba(0, 0, 0, 0.9);
-		}
-
-		&::before {
-			position: absolute;
-			content: "";
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 25vw;
-			height: 25vw;
-			background-color: #1d79f2;
-			opacity: 0.35;
-			filter: blur(220px);
-			z-index: -1;
-		}
-	}
-
-	&-hero {
-		width: 100%;
-		height: calc(100vh - var(--head-height));
+	&-arrows {
+		width: 100vw;
+		height: 100vh;
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		align-items: center;
-		background-color: var(--black);
-		color: var(--white);
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-size: cover;
+		background-blend-mode: darken;
+		background-color: rgba(0, 0, 0, 0.65);
+		background-position: center;
+		z-index: 1;
 
-		@include respond(tab) {
-			justify-content: flex-start;
-			flex-flow: column;
-			text-align: center;
-		}
-
-		&>* {
-			width: 50%;
+		&-left,
+		&-right {
 			height: 100%;
-			display: flex;
-			justify-content: center;
+			width: 12.5%;
+			position: absolute;
 
-			@include respond(tab) {
-				width: 100%;
-				height: 50%;
+			&__img {
+				width: 9.1875vw;
+				height: 9.1875vw;
+				height: auto;
+				position: absolute;
+				right: 0;
+				top: 10vh;
+				display: flex;
+				justify-content: flex-end;
+				align-items: flex-end;
+
+				&::before {
+					content: '';
+					position: absolute;
+					top: 100%;
+					left: 0;
+					width: 4px;
+					height: calc(90vh - 9.1875vw);
+					background-color: #d9d9d9;
+				}
 			}
 		}
 
 		&-left {
-			align-items: center;
-
-			img {
-				width: 22.5rem;
-				height: 22.5rem;
-				aspect-ratio: 1/1;
-				border-radius: 16px;
-			}
+			left: 0;
 		}
 
 		&-right {
-			align-items: flex-start;
-			flex-flow: column;
-
-			@include respond(tab) {
-				height: 35%;
-				justify-content: space-evenly;
-			}
-
-			@include respond(tab) {
-				padding: 0 1rem;
-			}
-
-			h1 {
-				font-size: 5rem;
-				line-height: 5.5rem;
-				letter-spacing: 0.175rem;
-				text-transform: uppercase;
-				margin: 2.5rem 0;
-				font-family: Audiowide, system-ui, -apple-system,
-					BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-					Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-
-			}
-
-			&-head {
-				@include respond(tab) {
-					width: 100%;
-				}
-			}
-
-			span {
-				font-size: 2.25rem;
-				line-height: 3rem;
-				letter-spacing: 0.1rem;
-				margin: 1rem 0;
-				font-family: Helvetica, sans-serif;
-			}
+			right: 0;
+			transform: rotate(180deg);
 		}
+	}
 
-		&-scroll-btn {
-			position: absolute;
-			bottom: 1rem;
-			left: 50%;
-			transform: translate(-50%, 0);
-			width: 2rem;
-			height: 2rem;
-			color: var(--white);
-			animation: bounce 2s ease-in-out infinite;
-		}
+	section {
+		width: 100%;
+		height: 100vh;
+		position: relative;
+		z-index: 2;
+		background: transparent;
+		scroll-snap-align: start;
 	}
 
 	&-about {
 		width: 100%;
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		flex-flow: column;
-		padding: 0 5% 0 7.5%;
+		margin: 0 auto;
+		color: var(--white);
 
 		&-head {
-			h1 {
-				font-size: 4rem;
-				line-height: 4.5rem;
-				text-transform: uppercase;
-				letter-spacing: 0.125rem;
-			}
-
-			margin: 2rem 0;
+			width: 75%;
+			font-size: 4rem;
+			line-height: 5rem;
+			letter-spacing: 0.25rem;
+			word-spacing: 0.75rem;
+			text-transform: uppercase;
+			margin: 0 auto;
+			padding: 10vh 2.5vw 1rem 2.5vw;
 		}
 
 		&-body {
-			p {
-				font-size: 1.5rem;
-				line-height: 2rem;
-				text-align: justify;
-				width: 97.5%;
-				margin: 1rem 0;
-			}
-
-			margin: 1rem 0;
+			width: 75%;
+			font-size: 1.75rem;
+			line-height: 2.5rem;
+			letter-spacing: 0.15rem;
+			font-weight: 100;
+			margin: 2rem auto;
+			padding: 0 2.5vw;
 		}
-
-		input {
-			position: absolute;
-			opacity: 0;
-			z-index: -1;
-		}
-
-		.tabs {
-			border-radius: 8px;
-			overflow: hidden;
-			box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
-		}
-
-		.tab {
-			width: 100%;
-			color: white;
-			overflow: hidden;
-
-			&-label {
-				display: flex;
-				justify-content: space-between;
-				padding: 1em;
-				background: $midnight;
-				font-weight: 600;
-				cursor: pointer;
-
-				/* Icon */
-				&:hover {
-					background: darken($midnight, 10%);
-				}
-
-				&::after {
-					content: "\276F";
-					width: 1em;
-					height: 1em;
-					text-align: center;
-					transition: all .35s;
-				}
-			}
-
-			&-content {
-				max-height: 0;
-				padding: 0 1em;
-				color: $midnight;
-				background: white;
-				transition: all .35s;
-			}
-
-			&-close {
-				display: flex;
-				justify-content: flex-end;
-				padding: 1em;
-				font-size: 0.75em;
-				background: $midnight;
-				cursor: pointer;
-
-				&:hover {
-					background: darken($midnight, 10%);
-				}
-			}
-		}
-
-		// :checked
-		input:checked {
-			+.tab-label {
-				background: darken($midnight, 10%);
-
-				&::after {
-					transform: rotate(90deg);
-				}
-			}
-
-			~.tab-content {
-				max-height: 100vh;
-				padding: 1em;
-			}
-		}
-
-	}
-
-	&-team {
-		width: 100%;
-		min-height: 100vh;
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		flex-flow: column;
-		padding: 0 5%;
-		background-color: var(--black);
-		position: relative;
-
-		&-head {
-			width: 100%;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			margin-top: 2rem;
-
-			h1 {
-				font-size: 3rem;
-				line-height: 4rem;
-				text-transform: uppercase;
-				letter-spacing: 0.125rem;
-				color: var(--white);
-				font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-			}
-		}
-
-		&-body {
-			width: 100%;
-
-			@include respond(tab) {
-				margin-top: 3rem;
-				margin-bottom: 3rem;
-			}
-		}
-	}
-}
-
-@keyframes bounce {
-	0% {
-		transform: translate(-50%, 0);
-	}
-
-	25% {
-		transform: translate(-50%, -0.25rem);
-	}
-
-	50% {
-		transform: translate(-50%, 0);
-	}
-
-	75% {
-		transform: translate(-50%, 0.25rem);
-	}
-
-	100% {
-		transform: translate(-50%, 0);
 	}
 }

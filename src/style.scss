@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin&family=Audiowide&family=Montserrat&family=Open+Sans&family=Roboto&family=Sacramento&family=Caveat&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -154,27 +155,31 @@
 	--yellow: #fbbc05;
 	--green: #34a853;
 }
+
 @import "./config";
 @import "./responsive";
+
 html {
 	font-size: 16px;
+	scroll-snap-type: mandatory;
+	scroll-snap-points-y: repeat(100vh);
+	scroll-snap-type: y mandatory;
+
 	@include respond(tab) {
 		font-size: 14px;
 	}
+
 	@include respond(phone) {
 		font-size: 12px;
 	}
 }
-body,
-#root {
+
+body{
 	font-family: Cabin, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	font-size: 1rem;
 	background-color: var(--bgcolor);
 	color: var(--tcolor);
-	min-height: 100vh;
-	width: 100vw;
-	display: flex;
 	letter-spacing: 0.025rem;
 	word-spacing: 0.25rem;
 	line-height: 1.25rem;
@@ -182,22 +187,15 @@ body,
 	overflow-x: hidden;
 	position: relative;
 }
-#root {
-	width: 100%;
-	height: 100%;
-	flex-flow: column;
-	background: transparent;
-}
-main {
-	width: 100%;
-	min-height: calc(100vh - var(--head-height));
-}
+
 svg {
 	overflow: visible;
 }
+
 a {
 	color: inherit;
 	text-decoration: none;
+
 	&:hover,
 	&:active,
 	&:focus,
@@ -206,6 +204,7 @@ a {
 		outline: none;
 	}
 }
+
 button {
 	border: none;
 	outline: none;
@@ -214,9 +213,11 @@ button {
 	user-select: none;
 	font: inherit;
 }
+
 input,
 textarea,
 select {
+
 	&,
 	&:hover,
 	&:active,
@@ -227,39 +228,47 @@ select {
 		outline: none;
 		resize: none;
 	}
+
 	&::placeholder {
 		user-select: none;
 		font-size: 0.875rem;
 		color: var(--gray-700);
 	}
 }
+
 a {
 	text-decoration: none;
 	color: inherit;
 }
+
 img {
 	object-fit: cover;
 	max-width: 100%;
 	max-height: 100%;
 }
+
 ::-webkit-scrollbar {
 	min-width: 0.7vw;
 	max-width: 0.5vw;
 	scroll-behavior: smooth;
 	background-color: var(--primary-3);
 	border: 4px solid transparent;
+
 	&-track {
 		background-color: var(--primary-5);
 	}
+
 	&-thumb {
 		background-clip: content-box;
 		background-color: var(--secondary-2);
 		border-radius: 500px;
+
 		&:hover {
 			background-color: var(--primary-4);
 		}
 	}
 }
+
 .material-symbols-outlined {
 	display: flex;
 	justify-content: center;
