@@ -64,14 +64,15 @@
 		scroll-snap-align: start;
 	}
 
-	&-about {
+	&-about,
+	&-projects {
 		width: 100%;
 		margin: 0 auto;
 		color: var(--white);
 
 		&-head {
 			width: 75%;
-			font-size: 4rem;
+			font-size: 3.25rem;
 			line-height: 5rem;
 			letter-spacing: 0.25rem;
 			word-spacing: 0.75rem;
@@ -84,10 +85,34 @@
 			width: 75%;
 			font-size: 1.75rem;
 			line-height: 2.5rem;
-			letter-spacing: 0.15rem;
+			letter-spacing: 0.1rem;
 			font-weight: 100;
 			margin: 2rem auto;
-			padding: 0 2.5vw;
+			padding: 2rem 2.5vw;
+		}
+	}
+
+	&-projects {
+		&-body {
+			width: 100vw;
+			height: calc(75vh - 6rem);
+			position: relative;
+		}
+
+		&-tray {
+			width: 87.5vw;
+			white-space: nowrap;
+			overflow-x: scroll;
+			position: absolute;
+			top: 50%;
+			left: 14vw;
+			transform: translateY(-50%);
+			z-index: 3;
+			scroll-snap-type: x mandatory;
+
+			&::-webkit-scrollbar-track {
+				background-color: transparent;
+			}
 		}
 	}
 }

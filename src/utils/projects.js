@@ -10,12 +10,16 @@ import i8 from "../images/projects/8.jpg";
 const projects = [
 	{
 		title: "Health Monitoring System",
+		description:
+			"Health Monitoring System is a project that aims to monitor heart rate, blood pressure, and body temperature of the person wearing it.",
 		github: "https://github.com/Aavesh-IIITU/Projects-Fest-2019/tree/master/Health-Monitoring-System",
 		link: "https://aavesh-iiitu.github.io/assets/project/abstract%20for%20IoT%20based%20health%20monitoring%20system.pdf",
 		image: i1,
 	},
 	{
 		title: "Food vending Machine",
+		description:
+			"Food vending machine is a project that aims to provide a solution to the problem of food wastage. It is a vending machine that can be used to sell food items that are about to expire. The machine can be used to sell food items at a discounted price.",
 		github: "https://github.com/Aavesh-IIITU/Projects-Fest-2019/tree/master/Food-Vending-Machine",
 		image: i2,
 	},

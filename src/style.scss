@@ -250,8 +250,8 @@ img {
 ::-webkit-scrollbar {
 	min-width: 0.7vw;
 	max-width: 0.5vw;
+	height: 7px;
 	scroll-behavior: smooth;
-	background-color: var(--primary-3);
 	border: 4px solid transparent;
 
 	&-track {

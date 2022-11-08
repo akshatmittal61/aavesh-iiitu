@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import GlobalContext from "../../Context/GlobalContext";
-import "./masonry.css";
+import "./masonry.scss";
 
 const Masonry = ({ lg = 3, md = 2, sm = 1, children }) => {
 	const { breakpoint } = useContext(GlobalContext);

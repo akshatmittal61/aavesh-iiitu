@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Project from "../../components/Project/Project";
 import { hexagons } from "../../images";
+import projects from "../../utils/projects";
 import { pillar } from "../../vectors";
 import "./home.scss";
 
@@ -41,6 +43,18 @@ const Home = () => {
 						technical society through various projects, patents and
 						research publications.
 					</p>
+				</div>
+			</section>
+			<section className="home-projects">
+				<div className="home-projects-head">
+					<h1>Our Projects</h1>
+				</div>
+				<div className="home-projects-body">
+					<div className="home-projects-tray">
+						{projects.map((project, index) => (
+							<Project key={index} {...project} />
+						))}
+					</div>
 				</div>
 			</section>
 			<div className="home-arrows" style={arrowsSectionStyles}>
