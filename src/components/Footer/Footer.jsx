@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import navLinks from "../../utils/navigation";
 import socials from "../../utils/socials";
-import "./footer.css";
+import "./footer.scss";
 
 const Footer = () => {
 	let k = navLinks.length / 2;

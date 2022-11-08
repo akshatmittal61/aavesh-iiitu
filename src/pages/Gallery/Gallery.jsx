@@ -4,7 +4,7 @@ import Ellipse from "../../images/Ellipse";
 import galleryPoster from "../../images/gallery.svg";
 import Masonry, { MasonryBox } from "../../Layout/Masonry/Masonry";
 import images from "../../utils/gallery";
-import "./gallery.css";
+import "./gallery.scss";
 
 const Gallery = () => {
 	return (

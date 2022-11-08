@@ -5,7 +5,7 @@ import Row, { Col } from "../../Layout/Responsive";
 import achievements from "../../utils/achievements";
 import events from "../../utils/events";
 import projects from "../../utils/projects";
-import "./wall.css";
+import "./wall.scss";
 
 const Wall = () => {
 	return (

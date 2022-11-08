@@ -1,6 +1,6 @@
 import React from "react";
 import { GitHub, Link } from "react-feather";
-import "./project.css";
+import "./project.scss";
 
 const Project = ({ image, title, github, link }) => {
 	return (

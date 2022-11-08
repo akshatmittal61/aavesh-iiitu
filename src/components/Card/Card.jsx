@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { getIcon, getLink } from "../../utils";
 import userFallback from "../../images/user.svg";
 import _ from "lodash";
-import "./card.css";
+import "./card.scss";
 
 const Card = ({
 	image,

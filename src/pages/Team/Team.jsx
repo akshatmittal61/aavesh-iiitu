@@ -5,7 +5,7 @@ import Ellipse from "../../images/Ellipse";
 import group from "../../images/group.svg";
 import Row, { Col } from "../../Layout/Responsive";
 import team from "../../utils/team";
-import "./team.css";
+import "./team.scss";
 
 const Team = () => {
 	return (

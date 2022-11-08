@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
-import "./event.css";
+import "./event.scss";
 
 const Event = ({ title, image, about, link }) => {
 	return (

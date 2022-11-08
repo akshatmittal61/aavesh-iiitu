@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./button.css";
+import "./button.scss";
 
 const Button = ({
 	text = "Click Me",

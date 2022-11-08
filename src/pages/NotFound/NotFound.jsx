@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../components/Button/Button";
 import errorImg from "../../images/error.png";
-import "./not-found.css";
+import "./not-found.scss";
 
 const NotFound = () => {
 	return (

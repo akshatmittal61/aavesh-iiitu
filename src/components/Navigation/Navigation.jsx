@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import GlobalContext from "../../Context/GlobalContext";
 import navLinks from "../../utils/navigation";
 import MaterialIcons from "../MaterialIcons";
-import "./navigation.css";
+import "./navigation.scss";
 
 const Navigation = () => {
 	const { openNav, setOpenNav } = useContext(GlobalContext);
