@@ -1,4 +1,5 @@
 import { colors } from ".";
+import { facultyCoordinator, president, vicePresident } from "../images";
 import allPeople from "./people";
 
 let team = [];
@@ -118,3 +119,21 @@ team = [
 ];
 
 export default team;
+
+export const officeBearers = [
+	{
+		title: "Faculty Coordinator",
+		image: facultyCoordinator,
+		name: "Dr. Tanu Wadhera",
+	},
+	{
+		title: "President",
+		image: president,
+		name: "Shivanand Shukla",
+	},
+	{
+		title: "Vice President",
+		image: vicePresident,
+		name: "Mahavir Dabas",
+	},
+];

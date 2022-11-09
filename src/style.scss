@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Audiowide&family=Montserrat&family=Open+Sans&family=Roboto&family=Sacramento&family=Caveat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Audiowide&family=Montserrat&family=Open+Sans&family=Roboto&family=Sacramento&family=Caveat&family=Cairo&family=Pacifico&family=Arvo&display=swap");
 
 * {
 	margin: 0;
@@ -172,7 +172,7 @@ html {
 	}
 }
 
-body{
+body {
 	font-family: Cabin, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	font-size: 1rem;
@@ -185,6 +185,10 @@ body{
 	overflow-x: hidden;
 	position: relative;
 	width: 100vw;
+	background-size: cover;
+	background-position-x: center;
+	background-position-y: top;
+	background-repeat: no-repeat;
 }
 
 svg {

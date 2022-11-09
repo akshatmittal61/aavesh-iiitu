@@ -13,11 +13,16 @@ import Team from "./pages/Team/Team";
 import NotFound from "./pages/NotFound/NotFound";
 import Gallery from "./pages/Gallery/Gallery";
 import Wall from "./pages/Wall/Wall";
+import { nightSky } from "./images";
 
 const App = () => {
 	const { setOpenNav, breakpoint } = useContext(GlobalContext);
 	AOS.init();
 	const location = useLocation();
+	useEffect(() => {
+		document.body.style.backgroundImage = `url(${nightSky})`;
+	}, [])
+	
 	useEffect(() => {
 		setOpenNav(false);
 	}, [location.pathname, setOpenNav]);

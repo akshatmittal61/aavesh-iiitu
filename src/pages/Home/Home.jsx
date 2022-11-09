@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Project from "../../components/Project/Project";
-import { hexagons, moon, stars } from "../../images";
+import {
+	facultyCoordinator,
+	hexagons,
+	moon,
+	president,
+	stars,
+	vicePresident,
+} from "../../images";
 import projects from "../../utils/projects";
 import socials from "../../utils/socials";
+import { officeBearers } from "../../utils/team";
 import { pillar } from "../../vectors";
 import "./home.scss";
 
 const Home = () => {
 	const vh = window.innerHeight * 0.01;
 	const [arrowsSectionStyles, setarrowsSectionStyles] = useState({
-		backgroundImage: `url(${hexagons})`,
+		// backgroundImage: `url(${hexagons})`,
 		opacity: 0,
 	});
 	useEffect(() => {
@@ -17,7 +25,7 @@ const Home = () => {
 			if (window.scrollY > 50 * vh) {
 				console.log("set");
 				setarrowsSectionStyles(() => ({
-					backgroundImage: `url(${hexagons})`,
+					// backgroundImage: `url(${hexagons})`,
 					opacity: 1,
 				}));
 			} else
@@ -27,9 +35,7 @@ const Home = () => {
 
 	return (
 		<main className="home">
-			<section className="home-hero" style={{
-				backgroundImage: `url(${stars})`,
-			}}>
+			<section className="home-hero">
 				<div className="home-hero-content">
 					<h1>Learn Electronics and Create</h1>
 				</div>
@@ -45,7 +51,10 @@ const Home = () => {
 						</a>
 					))}
 				</div>
-				<div className="home-hero-scroll">
+				<div
+					className="home-hero-scroll"
+					onClick={() => window.scrollTo(0, 100 * vh)}
+				>
 					<span className="home-hero-scroll__text">Scroll</span>
 					<span className="home-hero-scroll__arrow"></span>
 				</div>
@@ -69,6 +78,36 @@ const Home = () => {
 						technical society through various projects, patents and
 						research publications.
 					</p>
+				</div>
+			</section>
+			<section className="home-team">
+				<div className="home-team-head">
+					<h1>Our Team</h1>
+				</div>
+				<div className="home-team-body">
+					{officeBearers.map((member, index) => (
+						<div className="home-team-member" key={index}>
+							<div
+								className="home-team-member__front"
+								style={{
+									backgroundImage: `url(${member.image})`,
+								}}
+							></div>
+							<div
+								className="home-team-member__back"
+								style={{
+									backgroundImage: `url(${member.image})`,
+								}}
+							>
+								<span className="home-team-member__name">
+									{member.name}
+								</span>
+								<span className="home-team-member__status">
+									{member.title}
+								</span>
+							</div>
+						</div>
+					))}
 				</div>
 			</section>
 			<section className="home-projects">

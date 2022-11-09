@@ -1,3 +1,5 @@
+@import "../../config";
+
 .home {
 	width: 100vw;
 
@@ -65,9 +67,6 @@
 	}
 
 	&-hero {
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
 		color: var(--white);
 
 		&-content {
@@ -118,6 +117,8 @@
 			right: 0;
 			bottom: 7.5rem;
 			padding: 0 2rem;
+			cursor: crosshair;
+			user-select: none;
 
 			&__arrow {
 				position: absolute;
@@ -172,7 +173,8 @@
 	}
 
 	&-about,
-	&-projects {
+	&-projects,
+	&-team {
 		width: 100%;
 		margin: 0 auto;
 		color: var(--white);
@@ -186,13 +188,13 @@
 			text-transform: uppercase;
 			margin: 0 auto;
 			padding: 10vh 2.5vw 1rem 2.5vw;
+			font-family: 'Audiowide', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		}
 
 		&-body {
 			width: 75%;
-			font-size: 1.75rem;
-			line-height: 2.5rem;
-			letter-spacing: 0.1rem;
+			font-size: 1.3rem;
+			line-height: 1.8rem;
 			font-weight: 100;
 			margin: 2rem auto;
 			padding: 2rem 2.5vw;
@@ -219,6 +221,107 @@
 
 			&::-webkit-scrollbar-track {
 				background-color: transparent;
+			}
+		}
+	}
+
+	&-team {
+		&-body {
+			position: relative;
+			width: 100%;
+			height: calc(75vh - 6rem);
+		}
+
+		&-member {
+			border-radius: 50%;
+			// overflow: hidden;
+			perspective: 150rem;
+			cursor: crosshair;
+
+			&:nth-child(1) {
+				width: 21rem;
+				height: 21rem;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			&:nth-child(2) {
+				width: 17.5rem;
+				height: 17.5rem;
+				position: absolute;
+				top: 40%;
+				right: 20%;
+				transform: translate(50%, -100%);
+			}
+
+			&:nth-child(3) {
+				width: 17.5rem;
+				height: 17.5rem;
+				position: absolute;
+				top: 50%;
+				left: 20%;
+				transform: translate(-50%, -25%);
+			}
+
+			&__front,
+			&__back {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				backface-visibility: hidden;
+				border-radius: 50%;
+				box-shadow: var(--shadow-elevation-2dp);
+				padding: 1rem;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				transition: all 0.5s ease-in-out;
+			}
+
+			&__front {
+				transform: rotateY(0deg);
+
+				@include respond(phone) {
+					transform: rotateY(-180deg);
+				}
+			}
+
+			&__back {
+				transform: rotateY(180deg);
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				background-blend-mode: darken;
+				flex-flow: column;
+				background-color: rgba(0, 0, 0, 0.65);
+				padding: 25% 0;
+				text-align: center;
+
+				@include respond(phone) {
+					transform: rotateY(0deg);
+				}
+			}
+
+			&__name {
+				font-size: 2rem;
+				line-height: 3rem;
+				font-family: Arvo, Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			}
+
+			&__status {
+				font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			}
+
+			&:hover &__front {
+				transform: rotateY(-180deg);
+			}
+
+			&:hover &__back {
+				transform: rotateY(0deg);
 			}
 		}
 	}
