@@ -34,6 +34,11 @@ import transparentLogo from "./transparent-logo.svg";
 import forwardArrow from "./forward.svg";
 import backwardArrow from "./backward.svg";
 import teamwork from "./teamwork.svg";
+import sideLogo from "./side-logo.svg";
+
+import instagram from "./instagram.svg";
+import linkedin from "./linkedIn.svg";
+import gmail from "./gmail.svg";
 
 export {
 	Pillar,
@@ -42,6 +47,10 @@ export {
 	forwardArrow,
 	backwardArrow,
 	teamwork,
+	instagram,
+	linkedin,
+	gmail,
+	sideLogo,
 };
 
 export const circuit_lines = {

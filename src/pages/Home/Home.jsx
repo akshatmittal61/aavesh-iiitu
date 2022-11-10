@@ -1,18 +1,28 @@
 import React, { useState } from "react";
-import { Instagram, Link, Linkedin, Mail } from "react-feather";
+import { Instagram, Linkedin, Mail } from "react-feather";
 import { circuitBg } from "../../images";
 import Row, { Col } from "../../Layout/Responsive";
 import { cooridnators, officeBearers } from "../../utils/team";
-import { backwardArrow, forwardArrow, teamwork } from "../../vectors";
+import {
+	backwardArrow,
+	forwardArrow,
+	gmail,
+	instagram,
+	linkedin,
+	sideLogo,
+	teamwork,
+} from "../../vectors";
 import "./home.scss";
 
 const Home = () => {
 	const vh = window.innerHeight * 0.01;
 	const [heroText, setHeroText] = useState("Electronics");
+	const [socialHighlight, setSocialHighlight] = useState(3);
 	const socials = [
 		{
 			link: "https://www.instagram.com/teamaavesh/",
 			icon: <Instagram />,
+			image: instagram,
 			text: "Instagram",
 			username: "teamaavesh",
 			linkText: "instagram.com/teamaavesh",
@@ -20,6 +30,7 @@ const Home = () => {
 		{
 			link: "https://www.linkedin.com/company/aavesh-iiitu/",
 			icon: <Linkedin />,
+			image: linkedin,
 			text: "LinkedIn",
 			username: "aavesh-iiitu",
 			linkText: "linkedin.com/company/aavesh-iiitu",
@@ -27,12 +38,12 @@ const Home = () => {
 		{
 			link: "mailto:aavesh@iiitu.ac.in",
 			icon: <Mail />,
+			image: gmail,
 			text: "Email",
 			username: "aavesh@iiitu.ac.in",
 			linkText: "aavesh@iiitu.ac.in",
 		},
 	];
-	const [activeSocial, setActiveSocial] = useState(1);
 	return (
 		<main
 			className="home"
@@ -42,36 +53,64 @@ const Home = () => {
 		>
 			<section className="home-hero">
 				<div className="home-hero-content">
-					<h1>Learn {heroText} and create</h1>
+					<span>Learn {heroText}</span>
+					<span>and create</span>
 				</div>
 				<div className="home-hero-socials">
 					<span className="home-hero-socials__head">
 						Check Us out on
 					</span>
 					<div className="home-hero-socials__body">
-						<span>
+						<span onClick={() => setSocialHighlight((p) => p - 1)}>
 							<img src={backwardArrow} alt="Backward Arrow" />
 						</span>
-						{socials.map((social, index) => (
-							<a
-								key={index}
-								href={social.link}
-								target="_blank"
-								rel="noopener noreferrer"
-								className={`home-hero-socials__body__link ${
-									activeSocial === index ? "active" : ""
-								}`}
-								onMouseEnter={() => setActiveSocial(index)}
-								onMouseLeave={() => setActiveSocial(1)}
-							>
-								{social.icon}
-								<span>{social.text}</span>
-							</a>
-						))}
-						<span>
+						{Array(3)
+							.fill(null)
+							.map((_, i) => (
+								<a
+									href={
+										socials[
+											(Math.abs(socialHighlight) + i) % 3
+										].link
+									}
+									target="_blank"
+									rel="noopener noreferrer"
+									key={i}
+								>
+									<img
+										src={
+											socials[
+												(Math.abs(socialHighlight) +
+													i) %
+													3
+											].image
+										}
+										alt={
+											socials[
+												(Math.abs(socialHighlight) +
+													i) %
+													3
+											].text
+										}
+									/>
+									<span>
+										{
+											socials[
+												(Math.abs(socialHighlight) +
+													i) %
+													3
+											].text
+										}
+									</span>
+								</a>
+							))}
+						<span onClick={() => setSocialHighlight((p) => p + 1)}>
 							<img src={forwardArrow} alt="Forward Arrow" />
 						</span>
 					</div>
+				</div>
+				<div className="home-hero-side-logo">
+					<img src={sideLogo} alt="Side Logo" />
 				</div>
 				<div
 					className="home-hero-scroll"
