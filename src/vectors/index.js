@@ -30,6 +30,19 @@ import medium9 from "./circuit_lines/medium/medium-09.svg";
 
 import Pillar from "./circuit_lines/Pillar";
 import pillar from "./circuit_lines/pillar.svg";
+import transparentLogo from "./transparent-logo.svg";
+import forwardArrow from "./forward.svg";
+import backwardArrow from "./backward.svg";
+import teamwork from "./teamwork.svg";
+
+export {
+	Pillar,
+	pillar,
+	transparentLogo,
+	forwardArrow,
+	backwardArrow,
+	teamwork,
+};
 
 export const circuit_lines = {
 	thin: [thin1, thin2, thin3, thin4, thin5, thin6, thin7, thin8, thin9],
@@ -56,5 +69,3 @@ export const circuit_lines = {
 		medium9,
 	],
 };
-
-export { Pillar, pillar };

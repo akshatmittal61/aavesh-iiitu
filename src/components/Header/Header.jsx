@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import GlobalContext from "../../Context/GlobalContext";
-import logo from "../../images/logo.png";
 import navLinks from "../../utils/navigation";
+import { transparentLogo } from "../../vectors";
 import "./header.scss";
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
 		<header className="header">
 			<div className="header-left">
 				<Link to="/">
-					<img src={logo} alt="Aavesh IIITU" />
+					<img src={transparentLogo} alt="Aavesh IIITU" />
 				</Link>
 			</div>
 			{!(breakpoint("mobile") || breakpoint("tab")) && (
@@ -20,7 +20,16 @@ const Header = () => {
 						<ul className="header-nav-ul">
 							{navLinks.map((navLink, id) => (
 								<li key={id}>
-									<Link to={navLink.link}>
+									<Link
+										to={navLink.link}
+										onClick={() =>
+											navLink.link === "#about" &&
+											window.scrollTo(
+												0,
+												window.innerHeight
+											)
+										}
+									>
 										{navLink.text}
 									</Link>
 								</li>

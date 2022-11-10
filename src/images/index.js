@@ -8,6 +8,9 @@ import facultyCoordinator from "./faculty-coordinator.png";
 import president from "./president.png";
 import vicePresident from "./vice-president.png";
 
+import circuitBg from "./circuit-bg.png";
+import board from "./board.gif";
+
 export {
 	hexagons,
 	moon,
@@ -17,4 +20,6 @@ export {
 	facultyCoordinator,
 	president,
 	vicePresident,
+	circuitBg,
+	board,
 };

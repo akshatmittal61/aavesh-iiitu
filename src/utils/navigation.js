@@ -1,13 +1,13 @@
 const navLinks = [
 	{
-		link: "/",
-		icon: "home",
-		text: "Home",
+		link: "#about",
+		icon: "info",
+		text: "About",
 	},
 	{
-		link: "/wall-of-fame",
+		link: "/discover",
 		icon: "celebration",
-		text: "Wall Of Fame",
+		text: "Discover",
 	},
 	{
 		link: "/team",
@@ -18,11 +18,6 @@ const navLinks = [
 		link: "/gallery",
 		icon: "image",
 		text: "Gallery",
-	},
-	{
-		link: "/contact",
-		icon: "call",
-		text: "Contact Us",
 	},
 ];
 

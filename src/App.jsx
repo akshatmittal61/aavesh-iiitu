@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./style.scss";
 import Home from "./pages/Home/Home";
-// import Header from "./components/Header/Header";
+import Header from "./components/Header/Header";
 import Navigation from "./components/Navigation/Navigation";
 import Footer from "./components/Footer/Footer";
 import GlobalContext from "./Context/GlobalContext";
@@ -32,7 +32,7 @@ const App = () => {
 
 	return (
 		<>
-			{/* <Header /> */}
+			<Header />
 			{(breakpoint("mobile") || breakpoint("tab")) && <Navigation />}
 			<Routes>
 				<Route path="/" element={<Home />} />
@@ -42,7 +42,7 @@ const App = () => {
 				<Route path="/contact" element={<Contact />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 };

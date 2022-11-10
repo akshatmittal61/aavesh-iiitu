@@ -1,55 +1,75 @@
-import React, { useEffect, useState } from "react";
-import Project from "../../components/Project/Project";
-import {
-	facultyCoordinator,
-	hexagons,
-	moon,
-	president,
-	stars,
-	vicePresident,
-} from "../../images";
-import projects from "../../utils/projects";
-import socials from "../../utils/socials";
-import { officeBearers } from "../../utils/team";
-import { pillar } from "../../vectors";
+import React, { useState } from "react";
+import { Instagram, Linkedin, Mail } from "react-feather";
+import { circuitBg } from "../../images";
+import { backwardArrow, forwardArrow, teamwork } from "../../vectors";
 import "./home.scss";
 
 const Home = () => {
 	const vh = window.innerHeight * 0.01;
-	const [arrowsSectionStyles, setarrowsSectionStyles] = useState({
-		// backgroundImage: `url(${hexagons})`,
-		opacity: 0,
-	});
-	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			if (window.scrollY > 50 * vh) {
-				console.log("set");
-				setarrowsSectionStyles(() => ({
-					// backgroundImage: `url(${hexagons})`,
-					opacity: 1,
-				}));
-			} else
-				setarrowsSectionStyles({ backgroundImage: `none`, opacity: 0 });
-		});
-	}, [vh]);
-
+	const [heroText, setHeroText] = useState("Electronics");
+	const socials = [
+		{
+			link: "https://www.instagram.com/teamaavesh/",
+			icon: <Instagram />,
+			text: "Instagram",
+			username: "teamaavesh",
+			linkText: "instagram.com/teamaavesh",
+		},
+		{
+			link: "https://www.linkedin.com/company/aavesh-iiitu/",
+			icon: <Linkedin />,
+			text: "LinkedIn",
+			username: "aavesh-iiitu",
+			linkText: "linkedin.com/company/aavesh-iiitu",
+		},
+		{
+			link: "mailto:aavesh@iiitu.ac.in",
+			icon: <Mail />,
+			text: "Email",
+			username: "aavesh@iiitu.ac.in",
+			linkText: "aavesh@iiitu.ac.in",
+		},
+	];
+	const [activeSocial, setActiveSocial] = useState(1);
 	return (
-		<main className="home">
+		<main
+			className="home"
+			style={{
+				backgroundImage: `url(${circuitBg})`,
+			}}
+		>
 			<section className="home-hero">
 				<div className="home-hero-content">
-					<h1>Learn Electronics and Create</h1>
+					<h1>Learn {heroText} and create</h1>
 				</div>
 				<div className="home-hero-socials">
-					{socials.map((social, index) => (
-						<a
-							href={social.link}
-							target="_blank"
-							rel="noreferrer"
-							key={index}
-						>
-							{social.icon}
-						</a>
-					))}
+					<span className="home-hero-socials__head">
+						Check Us out on
+					</span>
+					<div className="home-hero-socials__body">
+						<span>
+							<img src={backwardArrow} alt="Backward Arrow" />
+						</span>
+						{socials.map((social, index) => (
+							<a
+								key={index}
+								href={social.link}
+								target="_blank"
+								rel="noopener noreferrer"
+								className={`home-hero-socials__body__link ${
+									activeSocial === index ? "active" : ""
+								}`}
+								onMouseEnter={() => setActiveSocial(index)}
+								onMouseLeave={() => setActiveSocial(1)}
+							>
+								{social.icon}
+								<span>{social.text}</span>
+							</a>
+						))}
+						<span>
+							<img src={forwardArrow} alt="Forward Arrow" />
+						</span>
+					</div>
 				</div>
 				<div
 					className="home-hero-scroll"
@@ -58,82 +78,39 @@ const Home = () => {
 					<span className="home-hero-scroll__text">Scroll</span>
 					<span className="home-hero-scroll__arrow"></span>
 				</div>
-				<div className="home-hero-moon">
-					<img src={moon} alt="Moon" />
-				</div>
 			</section>
-			<section className="home-about">
-				<div className="home-about-head">
-					<h1>About Us</h1>
-				</div>
-				<div className="home-about-body">
-					<p>
-						Aavesh is electronics society that strives to teach and
-						help students acquire new skills in an era of rapidly
-						evolving technology in the field of electronics and
-						communication engineering. The Society aims to provide
-						potential minds of IIITU a platform to discuss
-						innovative ideas and nurture their skills to tackle real
-						life challenges in the world today and contribute to the
-						technical society through various projects, patents and
-						research publications.
-					</p>
-				</div>
-			</section>
-			<section className="home-team">
-				<div className="home-team-head">
-					<h1>Our Team</h1>
-				</div>
-				<div className="home-team-body">
-					{officeBearers.map((member, index) => (
-						<div className="home-team-member" key={index}>
-							<div
-								className="home-team-member__front"
-								style={{
-									backgroundImage: `url(${member.image})`,
-								}}
-							></div>
-							<div
-								className="home-team-member__back"
-								style={{
-									backgroundImage: `url(${member.image})`,
-								}}
-							>
-								<span className="home-team-member__name">
-									{member.name}
-								</span>
-								<span className="home-team-member__status">
-									{member.title}
-								</span>
-							</div>
-						</div>
-					))}
-				</div>
-			</section>
-			<section className="home-projects">
-				<div className="home-projects-head">
-					<h1>Our Projects</h1>
-				</div>
-				<div className="home-projects-body">
-					<div className="home-projects-tray">
-						{projects.map((project, index) => (
-							<Project key={index} {...project} />
-						))}
+			<section className="home-about" id="about">
+				<div className="home-about-left">
+					<div className="home-about-group">
+						<h1>About Us</h1>
+						<p>
+							Aavesh is an electronics society that strives to
+							teach and help students acquire new skills in an era
+							of rapidly evolving technology in the field of
+							electronics and communication engineering.
+						</p>
+					</div>
+					<div className="home-about-group">
+						<h1>Vision</h1>
+						<p>
+							Empower students to acquire, demonstrate and
+							articulate the value of knowledge and skills that
+							will support them as lifelong lessons.
+						</p>
+					</div>
+					<div className="home-about-group">
+						<h1>Mission</h1>
+						<p>
+							To participate and contribute to the welfare of the
+							institute and the nation and practice the core
+							values.
+						</p>
 					</div>
 				</div>
+				<div className="home-about-right">
+					<img src={teamwork} alt="Teamwork" />
+				</div>
 			</section>
-			<div className="home-arrows" style={arrowsSectionStyles}>
-				<div className="home-arrows-left">
-					<div className="home-arrows-left__img">
-						<img src={pillar} alt="Pillar" />
-					</div>
-				</div>
-				<div className="home-arrows-right">
-					<div className="home-arrows-right__img">
-						<img src={pillar} alt="Pillar" />
-					</div>
-				</div>
-			</div>
 		</main>
 	);
 };

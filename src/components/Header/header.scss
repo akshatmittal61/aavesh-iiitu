@@ -4,38 +4,50 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 2rem;
+	padding: 0 2.5%;
 	overflow: hidden;
-	background-color: var(--black);
 	color: var(--white);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 5;
+
 	&-left {
 		width: 10rem;
 		height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
 		img {
 			object-fit: cover;
 			max-width: 100%;
 			max-height: 90%;
 		}
 	}
+
 	&-right {
 		height: 100%;
 	}
+
 	&-nav {
 		height: 100%;
+
 		&-ul {
 			height: 100%;
 			list-style: none;
 			display: flex;
 			justify-content: space-evenly;
 			align-items: center;
-			font-size: 1.25rem;
+			font-size: 1rem;
 			line-height: 1.5rem;
+			font-weight: 100;
+			font-family: Montserrat, sans-serif;
+
 			li {
 				padding: 1rem 0.5rem;
 			}
+
 			a {
 				padding: 0.25rem 0.5rem;
 				position: relative;
