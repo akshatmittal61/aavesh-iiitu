@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Instagram, Linkedin, Mail } from "react-feather";
+import { Instagram, Link, Linkedin, Mail } from "react-feather";
 import { circuitBg } from "../../images";
+import Row, { Col } from "../../Layout/Responsive";
+import { cooridnators, officeBearers } from "../../utils/team";
 import { backwardArrow, forwardArrow, teamwork } from "../../vectors";
 import "./home.scss";
 
@@ -110,6 +112,76 @@ const Home = () => {
 				<div className="home-about-right">
 					<img src={teamwork} alt="Teamwork" />
 				</div>
+			</section>
+			<section className="home-team" id="team">
+				<div className="home-team-group">
+					<h1>Office Bearers</h1>
+					<div className="home-team-group__members">
+						<Row>
+							{officeBearers.map((member, index) => (
+								<Col lg={33} key={index}>
+									<div className="home-team-member">
+										<div
+											className="home-team-member__front"
+											style={{
+												backgroundImage: `url(${member.image})`,
+											}}
+										></div>
+										<div
+											className="home-team-member__back"
+											style={{
+												backgroundImage: `url(${member.image})`,
+											}}
+										>
+											<span className="home-team-member__name">
+												{member.name}
+											</span>
+											<span className="home-team-member__status">
+												{member.title}
+											</span>
+										</div>
+									</div>
+								</Col>
+							))}
+						</Row>
+					</div>
+				</div>
+				<div className="home-team-group">
+					<h1>Coordinators</h1>
+					<div className="home-team-group__members">
+						<Row>
+							{cooridnators.slice(0, 4).map((member, index) => (
+								<Col lg={25} key={index}>
+									<div className="home-team-member">
+										<div
+											className="home-team-member__front"
+											style={{
+												backgroundImage: `url(${member.image})`,
+											}}
+										></div>
+										<div
+											className="home-team-member__back"
+											style={{
+												backgroundImage: `url(${member.image})`,
+											}}
+										>
+											<span className="home-team-member__name">
+												{member.name}
+											</span>
+											<span className="home-team-member__status">
+												{member.title}
+											</span>
+										</div>
+									</div>
+								</Col>
+							))}
+						</Row>
+					</div>
+				</div>
+				<button className="home-team-btn">
+					<span className="home-team-btn__arrow"></span>
+					<span className="home-team-btn__text">View More</span>
+				</button>
 			</section>
 		</main>
 	);

@@ -20,18 +20,9 @@ const Header = () => {
 						<ul className="header-nav-ul">
 							{navLinks.map((navLink, id) => (
 								<li key={id}>
-									<Link
-										to={navLink.link}
-										onClick={() =>
-											navLink.link === "#about" &&
-											window.scrollTo(
-												0,
-												window.innerHeight
-											)
-										}
-									>
+									<a href={navLink.link} target="_self">
 										{navLink.text}
-									</Link>
+									</a>
 								</li>
 							))}
 						</ul>

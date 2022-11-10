@@ -5,17 +5,17 @@ const navLinks = [
 		text: "About",
 	},
 	{
-		link: "/discover",
+		link: "#discover",
 		icon: "celebration",
 		text: "Discover",
 	},
 	{
-		link: "/team",
+		link: "#team",
 		icon: "people",
 		text: "Team",
 	},
 	{
-		link: "/gallery",
+		link: "#gallery",
 		icon: "image",
 		text: "Gallery",
 	},
